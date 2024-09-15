@@ -1,0 +1,115 @@
+/* @import "../../normalizer.css";
+
+.modalComponent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    width: 90%;
+   height: auto;
+    text-align: center;
+
+    &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+     }
+     &-title {
+        margin-bottom: 16px;
+        color: $mainColor;
+    }
+    &-message {
+        margin-bottom: 24px;
+        color: black;
+    }
+    &-buttonContainer {
+        display: flex;
+        justify-content: end;
+    }
+    &-button {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: end;
+  
+    }
+    &-content {
+        &-img {
+            width: 308px;
+            height: 304px;
+        }
+    }
+}
+
+
+ */
+
+ /* Import your normalizer.css file first */
+@import "../../normalizer.css";
+
+/* Styles for the modal component itself */
+.modalComponent {
+  background-color: white;
+  border-radius: 6px;
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  position: relative;
+  border-radius: 2rem;
+}
+
+/* Styles for the modal overlay */
+.modalComponent-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Styles for the button container within the modal */
+.modalComponent-buttonContainer {
+  display: flex;
+  justify-content: end;
+}
+
+
+.modalComponent-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: end;
+  position: absolute;
+  top: 5%;
+  right: 3%;
+.icon {
+  font-size: 1.5rem;
+}
+}
+
+
+.modalComponent-content .modalComponent-img {
+  width: 308px;
+  height: 304px;
+}
+
+@media (max-width: 768px) {
+  .modalComponent {
+    width: 90%;
+    height: 90%;
+  }
+}

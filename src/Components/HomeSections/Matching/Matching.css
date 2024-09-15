@@ -1,0 +1,123 @@
+.matching {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  h3 {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+.matchingCard-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.matchingCard-containerImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 250px;
+  border-radius: 2rem;
+  background-color: transparent;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.matchingCard-containerImage:last-child {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.matchingCard-containerImage:not(:last-child) {
+  z-index: 0;
+  opacity: 1;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.matchingCard-left {
+  transform: rotate(-25deg);
+  transition: transform 0.3s ease-in-out;
+  width: 33%;
+  display: flex;
+  justify-content: end;
+  margin-top: 5%;
+}
+
+.matchingCard-right {
+  transform: rotate(25deg);
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+  width: 33%;
+  display: flex;
+  justify-content: start;
+  margin-top: 5%;
+}
+
+.matchingCard-middle {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.matchingCard-info {
+  position: absolute;
+  bottom: 5%;
+  color: white;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.matchingCard-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.matchingCard-category {
+  font-size: 1.5rem;
+}
+
+.matchingCard-buttons {
+  z-index: 99999;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
+.close {
+  color: red;
+}
+.check {
+  color: green;
+}
+.matchingCard-buttonsMatching {
+  display: flex;
+  justify-content: center;
+}
+
+.matchingCard-container figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.matchingCard-container figure img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

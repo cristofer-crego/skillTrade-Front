@@ -1,0 +1,41 @@
+.botonera {
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+
+  .boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+    color: black;
+    width: 190px;
+    height: 48px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+    
+
+    &:hover {
+      background-color: #d1cfcf;
+    }
+  }
+
+  .aceptar {
+    background-color: #98e3c5;
+
+    &:hover {
+      background-color: rgb(123, 225, 184);
+    }
+  }
+}
+.boton-desactivado {
+    background-color: #ccc;
+    cursor: not-allowed;
+    &:hover {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }

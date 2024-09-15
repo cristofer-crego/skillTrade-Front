@@ -1,0 +1,18 @@
+.inputLabel{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & input{
+        border:none;
+        background-color: #D9D9D9;
+        border-radius: 2px;
+        height: 40px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    & label{
+        font-weight: 500;
+    }
+}

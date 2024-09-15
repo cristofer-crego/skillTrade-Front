@@ -1,0 +1,132 @@
+.userModalProfile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: auto;
+  height: 100%;
+}
+.userModalProfile-containerImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  border-radius: 2rem 0 0 2rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem 0 0 2rem;
+  }
+}
+.userModalProfile-containerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userModalProfile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  justify-content: start;
+  padding: 4rem;
+  text-align: justify;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(57, 27, 148, 1) 5%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 0 2rem 2rem 0;
+  color: white;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.userModalProfile-category {
+  color: rgba(2, 0, 36, 1);
+  background-color: white;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: bold;
+  margin-bottom: 2rem;
+}
+.userModalProfile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.userModalProfile-email {
+  margin-bottom: 1rem;
+}
+.userModalProfile-rating {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.userModalProfile-contact {
+  margin: 1.5rem 0 1rem 0;
+}
+.userModalProfile-socialMedia {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: black;
+}
+.userModalProfile-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.userModalProfile-description {
+  min-height: 150px;
+}
+
+@media (max-width: 768px) {
+  .userModalProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: auto;
+    height: 100%;
+  }
+  .userModalProfile-info {
+    padding: 1rem;
+  }
+  .userModalProfile-info {
+    border-radius: 0 0 2rem 2rem;
+    width: 100%;
+  }
+  .userModalProfile-containerImage {
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+  }
+  .userModalProfile-rating {
+    bottom: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .userModalProfile-description {
+    min-height: 50px;
+  }
+  
+}

@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    /* overflow-x: hidden; */
+}
+
+a{
+    color: rgba(57, 27, 148, 1); 
+    &:hover {
+        color: rgba(2,0,36,1);
+      }
+}
