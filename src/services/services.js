@@ -1,11 +1,13 @@
 import axios from "axios";
 
-// const URL_GET_USERS = import.meta.env.VITE_API_GET_USERS
-const URL_GET_USERS = "http://localhost:3001/user";
-const URL_POST_USER = "http://localhost:3001/user";
-const URL_LOGIN = "http://localhost:3001/user/login";
-const URL_GET_PROFESIONS = "http://localhost:3001/professions";
-const URL_GET_USERS_BY_PROFESSION = "http://localhost:3001/user/profession";
+const URL_RENDER = "https://skilltrade-back.onrender.com";
+const URL_LOCAL = "http://localhost:3001";
+
+const URL_GET_USERS = `${URL_RENDER}/user`;
+const URL_POST_USER = `${URL_RENDER}/user`;
+const URL_LOGIN = `${URL_RENDER}/user/login`;
+const URL_GET_PROFESIONS = `${URL_RENDER}/professions`;
+const URL_GET_USERS_BY_PROFESSION = `${URL_RENDER}/user/profession`;
 
 export const createUser = async (userData) => {
   try {
