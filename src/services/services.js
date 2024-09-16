@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const URL_RENDER = "https://skilltrade-back.onrender.com";
-const URL_LOCAL = "http://localhost:3002";
+// const URL_LOCAL = "http://localhost:3002";
 
 const URL_GET_USERS = `${URL_RENDER}/user`;
 const URL_POST_USER = `${URL_RENDER}/user`;
