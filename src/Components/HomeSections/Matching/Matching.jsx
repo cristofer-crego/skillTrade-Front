@@ -13,7 +13,8 @@ const Matching = () => {
   const [deniedUsers, setDeniedUsers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userActive, setUserActive] = useState(allUsersData[0]);
-  const { isLogged, userLogged, acceptedUsers, setAcceptedUsers } = useContext(AppContext);
+  const { isLogged, userLogged, acceptedUsers, setAcceptedUsers } =
+    useContext(AppContext);
 
   const handleGetAllUsers = async () => {
     try {
@@ -52,7 +53,7 @@ const Matching = () => {
 
   return (
     <>
-      {isLogged ? (
+      {userLogged ? (
         <section className="matching">
           <h3>¡Matchea tus conocimientos!</h3>
           <div className="matchingCard-container">
@@ -140,8 +141,10 @@ const Matching = () => {
                 </div>
               ) : (
                 <div className="math-link">
-                <p>¡Match completado!</p>
-                <NavLink to='/match' className='matchBtn'>Ver Mi Match</NavLink>
+                  <p>¡Match completado!</p>
+                  <NavLink to="/match" className="matchBtn">
+                    Ver Mi Match
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -174,7 +177,7 @@ const Matching = () => {
                     <article className="matchingCard-buttonsMatching">
                       <button
                         className="matchingCard-buttons check"
-                        style={{ fontSize: "3rem", cursor:'auto' }}
+                        style={{ fontSize: "3rem", cursor: "auto" }}
                       >
                         <AiFillCheckCircle />
                       </button>
