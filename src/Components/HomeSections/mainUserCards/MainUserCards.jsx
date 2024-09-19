@@ -7,12 +7,11 @@ import { useState } from "react";
 import { AppContext } from "../../appContext/AppContext";
 
 const MainUserCards = () => {
+  const [allUsersData, setAllUsersData] = useState([]);
   const {
     usersSelectedByProfession,
     setUsersSelectedByProfession,
     noUserFounded,
-    allUsersData,
-    setAllUsersData,
   } = useContext(AppContext);
   const sectionRef = useRef(null);
 
@@ -50,7 +49,7 @@ const MainUserCards = () => {
     <section ref={sectionRef} className="SectionUserCards">
       <h2>¡Busca, interactúa y aprende!</h2>
       <div className="SectionUserCards-container">
-        {usersToDisplay?.slice(0, 6).map((user) => (
+        {usersToDisplay.slice(0, 6).map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
       </div>

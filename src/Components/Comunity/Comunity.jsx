@@ -1,12 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AppContext } from "../appContext/AppContext";
 import UserCard from "../HomeSections/userCard/UserCard";
 import { NavHeader } from "../../Screens";
 import "./Comunity.css";
+import { getAllUsers } from "../../../services/services";
 
 const Comunity = () => {
-  const { userData, setUserData } = useContext(AppContext);
+  // const { userData, setUserData } = useContext(AppContext);
+  const [allUsersData, setAllUsersData] = useState([]);
+  const handleGetAllUsers = async () => {
+    try {
+      const response = await getAllUsers();
 
+      if (response.status === 200) {
+        setAllUsersData(response.data);
+      } else {
+        console.log("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
+  };
+
+  useEffect(() => {
+    handleGetAllUsers();
+  }, []);
   return (
     <>
       <NavHeader />
@@ -16,7 +34,7 @@ const Comunity = () => {
           increíble
         </h3>
         <div className="SectionUserCards-container">
-          {userData?.map((user) => (
+          {allUsersData?.map((user) => (
             <UserCard key={user.id} user={user} />
           ))}
         </div>
