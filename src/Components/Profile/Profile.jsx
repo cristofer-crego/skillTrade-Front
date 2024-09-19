@@ -9,7 +9,11 @@ import { getProfessions, putUpdateUser } from "../../services/services";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Botonera from "../Botonera/Botonera";
-import { capitalizeFirstLetter, formatDate, getUserInitials } from "../../utils/utils";
+import {
+  capitalizeFirstLetter,
+  formatDate,
+  getUserInitials,
+} from "../../utils/utils";
 
 const Profile = () => {
   const { isLogged, userLogged, setUserLogged } = useContext(AppContext);
@@ -31,19 +35,19 @@ const Profile = () => {
   //   }
   // };
   const handleImageChange = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const imageUrl = URL.createObjectURL(file);
-    setSelectedImage(imageUrl);  // Actualiza el estado
-  }
-};
+    const file = event.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl); // Actualiza el estado
+    }
+  };
 
   const handleSubmit = async (values) => {
     console.log("first");
     console.log(values);
     const userData = {
       id: Number(userLogged.id),
-      name: values.name || userLogged.name, 
+      name: values.name || userLogged.name,
       last_name: values.last_name || userLogged.last_name,
       image: selectedImage || userLogged.image,
       birthdate: values.birthdate || userLogged.birthdate,
@@ -56,7 +60,7 @@ const Profile = () => {
       tel: values.tel || userLogged.tel || "",
       Instagram:
         values.Instagram || userLogged.Instagram || `@${userLogged.name}`,
-      professionId: values.professionId || userLogged.professionId, 
+      professionId: values.professionId || userLogged.professionId,
       // sexo: userLogged.sexo,
     };
     console.log(userData);
@@ -142,34 +146,37 @@ const Profile = () => {
             {capitalizeFirstLetter(userLogged?.last_name)}
           </h2>
           {selectedImage || userLogged?.image ? (
-          <img
-            src={selectedImage || userLogged?.image}
-            alt="Imagen de perfil"
-            className="profile-photo"
+            <img
+              src={selectedImage || userLogged?.image}
+              alt="Imagen de perfil"
+              className="profile-photo"
+            />
+          ) : (
+            <div className="profile-initials-name">
+              {getUserInitials(userLogged?.name, userLogged?.last_name)}
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={() => document.getElementById("fileInput").click()}
+          >
+            Actualizar Foto
+          </button>
+
+          <input
+            id="fileInput"
+            type="file"
+            name="image"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleImageChange}
           />
-        ) : (
-          <div className="profile-initials-name">
-            {getUserInitials(userLogged?.name, userLogged?.last_name)}
-          </div>
-        )}
-
-        <button
-          type="button"
-          onClick={() => document.getElementById("fileInput").click()}
-        >
-          Actualizar Foto
-        </button>
-
-        <input
-          id="fileInput"
-          type="file"
-          name="image"
-          accept="image/*"
-          style={{ display: "none" }}
-          onChange={handleImageChange}
-        />
-              <p className="memberSince"> Miembro desde {formatDate(userLogged.createdAt)}</p>
-      </div>
+          <p className="memberSince">
+            {" "}
+            Miembro desde {formatDate(userLogged.createdAt)}
+          </p>
+        </div>
 
         {/* <p>Miembro desde {user.joinDate}</p> */}
 
@@ -219,7 +226,7 @@ const Profile = () => {
                       <Field
                         type="text"
                         name="last_name"
-                        value={values.name}
+                        value={values.last_name}
                         onChange={handleChange}
                       />
                       <ErrorMessage
