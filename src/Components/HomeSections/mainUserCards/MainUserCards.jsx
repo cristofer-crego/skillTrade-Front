@@ -7,11 +7,12 @@ import { useState } from "react";
 import { AppContext } from "../../appContext/AppContext";
 
 const MainUserCards = () => {
-  const [allUsersData, setAllUsersData] = useState([]);
   const {
     usersSelectedByProfession,
     setUsersSelectedByProfession,
     noUserFounded,
+    allUsersData,
+    setAllUsersData,
   } = useContext(AppContext);
   const sectionRef = useRef(null);
 
