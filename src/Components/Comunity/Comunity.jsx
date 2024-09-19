@@ -3,7 +3,7 @@ import { AppContext } from "../appContext/AppContext";
 import UserCard from "../HomeSections/userCard/UserCard";
 import { NavHeader } from "../../Screens";
 import "./Comunity.css";
-import { getAllUsers } from "../../../services/services";
+import { getAllUsers } from "../../services/services";
 
 const Comunity = () => {
   // const { userData, setUserData } = useContext(AppContext);
