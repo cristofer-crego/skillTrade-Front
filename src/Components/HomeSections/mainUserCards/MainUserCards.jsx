@@ -50,7 +50,7 @@ const MainUserCards = () => {
     <section ref={sectionRef} className="SectionUserCards">
       <h2>¡Busca, interactúa y aprende!</h2>
       <div className="SectionUserCards-container">
-        {usersToDisplay.slice(0, 6).map((user) => (
+        {usersToDisplay?.slice(0, 6).map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
       </div>
