@@ -64,7 +64,7 @@ const Header = () => {
           value={searchTerm} // Vínculo al valor del estado
           onChange={handleSearchChange}
         />
-        <span>🔍</span>
+        <span className="icon">🔍</span>
       </div>
       <Selector />
     </header>
