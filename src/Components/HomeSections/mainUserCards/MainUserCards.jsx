@@ -31,6 +31,7 @@ const MainUserCards = () => {
 
   useEffect(() => {
     handleGetAllUsers();
+    setUsersSelectedByProfession([]);
   }, []);
 
   useEffect(() => {
