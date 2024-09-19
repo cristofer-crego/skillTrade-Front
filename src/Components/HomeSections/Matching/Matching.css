@@ -61,11 +61,12 @@
 .matchingCard-right {
   transform: rotate(25deg);
   transition: transform 0.3s ease-in-out;
-  z-index: -1;
+  /* z-index: -1; */
   width: 33%;
   display: flex;
   justify-content: start;
   margin-top: 5%;
+  cursor: auto;
 }
 
 .matchingCard-middle {
@@ -80,6 +81,7 @@
   color: white;
   width: 100%;
   padding: 1rem 2rem;
+  cursor: auto;
 }
 
 .matchingCard-name {
@@ -107,6 +109,7 @@
 .matchingCard-buttonsMatching {
   display: flex;
   justify-content: center;
+  cursor: auto;
 }
 
 .matchingCard-container figure img {
@@ -120,4 +123,36 @@
 .matchingCard-container figure img:hover {
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.math-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  .matchBtn {
+    padding: 0 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(57, 27, 148, 1) 50%,
+      rgba(0, 212, 255, 1) 100%
+    );
+      color: white;
+  
+      &:hover {
+        background: rgba(2, 0, 36, 1);
+  
+      }
+  }
+}
+@media (max-width: 768px) {
+  .math-link {
+    z-index: 99;
+   font-size: 1.5rem;
+  }
 }

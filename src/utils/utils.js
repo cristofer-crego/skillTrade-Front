@@ -16,3 +16,13 @@ export const capitalizeEachWord = (text) => {
 export const capitalizeFirstLetter = (text) => {
   return text?.charAt(0).toUpperCase() + text?.slice(1);
 };
+export const getUserInitials = (name, lastName) => {
+  const firstInitial = name ? name.charAt(0).toUpperCase() : "";
+  const lastInitial = lastName ? lastName.charAt(0).toUpperCase() : "";
+  return `${firstInitial}${lastInitial}`;
+};
+export const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  return date.toLocaleDateString("es-ES", options); // Cambia el idioma a español
+};

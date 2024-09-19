@@ -7,6 +7,7 @@ import "./LoginScreen.css";
 import { login } from "../../services/services.js";
 import { AppContext } from "../../Components/appContext/AppContext.jsx";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const LoginScreen = () => {
   const navigate = useNavigate();
@@ -40,9 +41,25 @@ const validationSchema = Yup.object().shape({
         navigate("/");
       } else {
         console.log("Error:", response.statusText);
+        Swal.fire({
+          showCloseButton: true,
+          icon: "error",
+          title: response.data.error || "Error de autenticación",
+          text: "",
+          showConfirmButton: false,
+          timer: 5000,
+        });
       }
     } catch (error) {
       console.error("Login failed:", error);
+      Swal.fire({
+        showCloseButton: true,
+        icon: "error",
+        title: error.response?.data?.error || "Fallo en la autenticación",
+        text: "",
+        showConfirmButton: false,
+        timer: 5000,
+      });
     } finally {
       setSubmitting(false);
     }
@@ -50,7 +67,6 @@ const validationSchema = Yup.object().shape({
   
   useEffect(() => {
     if (isLogged) {
-      // Solo navega si userLogged ya está seteado
       navigate("/");
     }
   }, [isLogged, navigate]);
@@ -62,8 +78,17 @@ const validationSchema = Yup.object().shape({
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ handleChange, isValid, touched, errors }) => (
-          <Form>
+       {({ handleChange, isValid, errors, touched, setTouched }) => {
+          useEffect(() => {
+            setTouched({
+              email: true,
+              password: true,
+            });
+          }, [setTouched]);
+
+          return (
+         
+         <Form>
             <h2>Inicio de Sesión</h2>
             <div className="bloqueCentro">
               <div>
@@ -117,10 +142,10 @@ const validationSchema = Yup.object().shape({
                 Object.keys(errors).length === 0 &&
                 Object.keys(touched).length > 0
               }
-              touched={touched}
             />
           </Form>
-        )}
+          )
+        }}
       </Formik>
     </div>
   );

@@ -23,7 +23,9 @@ const AppProvider = ({ children }) => {
     return savedUserLogged ? JSON.parse(savedUserLogged) : null;
   });
 
-  console.log(userLogged);
+  const [acceptedUsers, setAcceptedUsers] = useState([]);
+  
+
 
   const handleGetAllUsers = async () => {
     try {
@@ -46,7 +48,6 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     const checkToken = () => {
       const token = Cookies.get("token");
-      console.log("Token:", token);
       setIsLogged(!!token); // Ajusta isLogged en base a la existencia del token
     };
 
@@ -84,6 +85,8 @@ const AppProvider = ({ children }) => {
         setNoUserFounded,
         userLogged,
         setUserLogged,
+        acceptedUsers,
+        setAcceptedUsers
       }}
     >
       {children}

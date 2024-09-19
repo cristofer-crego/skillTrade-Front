@@ -1,26 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import "./NavHeader.css";
-import { NavLink} from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AppContext } from "../../appContext/AppContext";
 import Cookies from "js-cookie";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { capitalizeFirstLetter, getUserInitials } from "../../../utils/utils";
 
 const NavHeader = () => {
   const { isLogged, userLogged, setIsLogged } = useContext(AppContext);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  console.log(isLogged);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
   };
-  const getUserInitials = (name, lastName) => {
-    const firstInitial = name ? name.charAt(0).toUpperCase() : "";
-    const lastInitial = lastName ? lastName.charAt(0).toUpperCase() : "";
-    return `${firstInitial}${lastInitial}`;
-  };
+
   const handleLogout = () => {
     Cookies.remove("token");
     localStorage.removeItem("userLogged");
@@ -30,8 +26,7 @@ const NavHeader = () => {
   };
 
   useEffect(() => {
-    // Este efecto se disparará cuando `userLogged` cambie
-    console.log("Usuario loggeado:", userLogged);
+    // console.log("Usuario loggeado:", userLogged);
   }, [userLogged]);
 
   useEffect(() => {
@@ -51,18 +46,32 @@ const NavHeader = () => {
     };
   }, []);
 
-  console.log(userLogged);
+  const handleProfile = () => {
+    navigate("/profile");
+  };
+
+  const handleClick = () => {
+    navigate('/');
+    window.scrollTo(0, 0); // Forzar el scroll hacia arriba
+  };
+  
   return (
     <nav>
       <div className={`home-nav-container ${isScrolled ? "scrolled" : ""}`}>
-        <h1 className="title">SkillTrade</h1>
+      <div onClick={handleClick} style={{cursor:'pointer'}}>
+      <img src="https://res.cloudinary.com/dd8l8bm6q/image/upload/v1726505766/rbjosfflqw22nls4jeqr.png" alt="" width="150px" />
+    </div>
+
         <ul className="right">
-          <li className="question">?</li>
-          <li className="comunity">Comunidad</li>
+           {/* <li className="question">?</li> */}
+           <NavLink to="/comunity">
+           <li className="comunity">Comunidad</li> 
+
+           </NavLink>
           {isLogged ? (
             <div className="user-info" onClick={toggleDropdown}>
               <span className="greeting">
-                ¡Qué bueno verte {userLogged?.name}!
+                ¡Qué bueno verte {capitalizeFirstLetter(userLogged?.name)}!
               </span>
               {userLogged?.image ? (
                 <img
@@ -78,6 +87,9 @@ const NavHeader = () => {
 
               {isDropdownVisible && (
                 <div className="dropdown-menu">
+                  <button className="logout-button" onClick={handleProfile}>
+                    Ver mi perfil
+                  </button>
                   <button className="logout-button" onClick={handleLogout}>
                     Cerrar sesión
                   </button>

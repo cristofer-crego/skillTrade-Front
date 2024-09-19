@@ -42,7 +42,7 @@ const SuggestedSearch = ({ filteredProfessions, onSuggestionClick }) => {
 
   return (
     <>
-      {filteredProfessions && (
+      {filteredProfessions && filteredProfessions.length > 0 && (
         <div className="suggestion">
           {filteredProfessions.length > 0 && (
             <ul className="suggestion-ul">

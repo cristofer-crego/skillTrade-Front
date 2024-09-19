@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Botonera.css";
 
-const Botonera = ({ isValid, touched }) => {
-  const allFieldsTouched =
-    Object.keys(touched).length > 0 &&
-    Object.values(touched).every((field) => field === true);
+const Botonera = ({ isValid }) => {
+  // const allFieldsTouched =
+  //   Object.keys(touched).length > 0 &&
+  //   Object.values(touched).every((field) => field === true);
 
-  const isButtonEnabled = isValid && allFieldsTouched;
+  const isButtonEnabled = isValid ;
 
 
   return (

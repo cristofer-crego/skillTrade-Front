@@ -1,58 +1,72 @@
-.login{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #D9D9D9;
-    
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d9d9d9;
 }
 
-.login form{
-    padding: 90px 90px 90px 80px;
-    width: 550px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(57, 27, 148, 1);
-    border-radius: 2rem;
+.login form {
+  padding: 90px 90px 90px 80px;
+  width: 550px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(57, 27, 148, 1);
+  border-radius: 2rem;
 
-
-    & h2{
-        font-size: 40px;
-        text-align: center;
-        color: rgba(2, 0, 36, 1);
-        
-    }
+  & h2 {
+    font-size: 40px;
+    text-align: center;
+    color: rgba(2, 0, 36, 1);
+  }
 }
 
-.login .bloqueCentro{
-    display: flex;
-    flex-direction: column;
-    gap:30px;
-
+.login .bloqueCentro {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .error {
-    color: red;
-    font-size: 1rem;
+  color: red;
+  font-size: 1rem;
 }
 .password-container {
-    position: relative;
+  position: relative;
+}
+
+.password-input {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: rgba(2, 0, 36, 1);
+  bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .login {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  
+  }
+  .login form {
+    padding: 1rem;
+    width: 350px;
+    & h2 {
+      font-size: 30px;
+      margin-top: 1rem;
+
+    }
   }
   
-  .password-input {
-    display: flex;
-    align-items: center;
-  }
-  
-  .toggle-password {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: rgba(2, 0, 36, 1);
-    bottom: 8px;
-  }
-  
+}

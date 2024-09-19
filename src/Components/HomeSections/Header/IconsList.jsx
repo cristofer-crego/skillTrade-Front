@@ -1,8 +1,13 @@
+import { BiSolidCameraMovie } from 'react-icons/bi';
+import { BsMusicPlayerFill } from 'react-icons/bs';
 import { FaGuitar, FaDrum, FaChalkboardTeacher, FaTools, FaLightbulb, FaWrench, FaHammer, FaCode, FaCamera, FaMusic, FaDumbbell, FaBalanceScale, FaUserMd, FaStethoscope, FaDog, FaBrain, FaPaintBrush, FaFilm, FaPenFancy, FaTractor, FaLeaf, FaPlane, FaShip, FaTree, FaVideo, FaProjectDiagram, FaBullhorn, FaBicycle } from 'react-icons/fa';
-import { GiSewingMachine, GiChemicalDrop, GiBee, GiWateringCan, GiBowlingPin, GiGrandPiano, GiViolin, GiCook } from 'react-icons/gi';
+import { GiSewingMachine, GiChemicalDrop, GiBee, GiWateringCan, GiBowlingPin, GiGrandPiano, GiViolin, GiCook, GiTeacher, GiMusicalNotes } from 'react-icons/gi';
 import { GrCloudSoftware } from 'react-icons/gr';
+import { IoMdBoat } from 'react-icons/io';
+import { LiaChalkboardTeacherSolid } from 'react-icons/lia';
+import { LuBrainCircuit } from 'react-icons/lu';
 import { MdFitnessCenter, MdPsychology, MdEngineering, MdEdit } from 'react-icons/md';
-import { PiChefHat } from 'react-icons/pi';
+import { PiChefHat, PiPaintBrushBroadFill } from 'react-icons/pi';
 import { SiCodechef } from 'react-icons/si';
 
 
@@ -12,8 +17,8 @@ export const professionsList = [
     { name: "Baterista", icon: <FaDrum /> },
     { name: "Violinista", icon: <GiViolin /> },
     { name: "Profesor de Inglés", icon: <FaChalkboardTeacher /> },
-    { name: "Profesor de Francés", icon: <FaChalkboardTeacher /> },
-    { name: "Profesor de Español", icon: <FaChalkboardTeacher /> },
+    { name: "Profesor de Francés", icon: <GiTeacher /> },
+    { name: "Profesor de Español", icon: <LiaChalkboardTeacherSolid /> },
     { name: "Mecánico Automotriz", icon: <FaWrench /> },
     { name: "Mecánico de Bicicletas", icon: <FaBicycle /> },
     { name: "Electricista", icon: <FaLightbulb /> },
@@ -24,7 +29,7 @@ export const professionsList = [
     { name: "Diseñador Gráfico", icon: <FaPaintBrush /> },
     { name: "Fotógrafo", icon: <FaCamera /> },
     { name: "Editor de Fotos", icon: <MdEdit /> },
-    { name: "Productor de Música", icon: <FaMusic /> },
+    { name: "Productor de Música", icon: <GiMusicalNotes /> },
     { name: "DJ", icon: <FaMusic /> },
     { name: "Chef", icon: <PiChefHat /> },
     { name: "Panadero", icon: <SiCodechef /> },
@@ -56,15 +61,15 @@ export const professionsList = [
     { name: "Coach de Vida", icon: <FaBrain /> },
     //{ name: "Coach de Carreras", icon: <FaRunning /> },
     { name: "Terapeuta", icon: <FaBrain /> },
-    { name: "Psicólogo", icon: <MdPsychology /> },
-    { name: "Ilustrador", icon: <FaPaintBrush /> },
+    { name: "Psicólogo", icon: <LuBrainCircuit /> },
+    { name: "Ilustrador", icon: <PiPaintBrushBroadFill /> },
     { name: "Animador 3D", icon: <FaFilm /> },
     { name: "Diseñador de Moda", icon: <GiSewingMachine /> },
     { name: "Maquillador", icon: <FaPaintBrush /> },
     //{ name: "Estilista de Cabello", icon: <FaCut /> },
-    { name: "Instructor de Baile", icon: <FaMusic /> },
+    { name: "Instructor de Baile", icon: <BsMusicPlayerFill /> },
     //{ name: "Actor", icon: <FaTheaterMasks /> },
-    { name: "Director de Cine", icon: <FaFilm /> },
+    { name: "Director de Cine", icon: <BiSolidCameraMovie /> },
     { name: "Guionista", icon: <FaPenFancy /> },
    // { name: "Arquitecto", icon: <FaDraftingCompass /> },
     { name: "Agricultor Orgánico", icon: <FaTractor /> },
@@ -73,7 +78,7 @@ export const professionsList = [
     { name: "Piloto de Avión", icon: <FaPlane /> },
    // { name: "Controlador Aéreo", icon: <FaTachometerAlt /> },
    // { name: "Navegante", icon: <FaCompass /> },
-    { name: "Marinero", icon: <FaShip /> },
+    { name: "Marinero", icon: <IoMdBoat /> },
     { name: "Ingeniero Naval", icon: <FaShip /> },
     { name: "Jardinero", icon: <FaTree /> },
     { name: "Paisajista", icon: <GiWateringCan /> },

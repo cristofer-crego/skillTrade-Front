@@ -8,6 +8,8 @@ const URL_POST_USER = `${URL_RENDER}/user`;
 const URL_LOGIN = `${URL_RENDER}/user/login`;
 const URL_GET_PROFESIONS = `${URL_RENDER}/professions`;
 const URL_GET_USERS_BY_PROFESSION = `${URL_RENDER}/user/profession`;
+const URL_GET_USERS_BY_NAME_DESCRIP_PROF = `${URL_RENDER}/user/search`;
+const URL_UPDATE_USER = `${URL_RENDER}/user/update`;
 
 export const createUser = async (userData) => {
   try {
@@ -110,6 +112,53 @@ export const getUsersByProfesion = async (profession) => {
     return response;
   } catch (error) {
     console.error("Error fetching users:", error);
+    throw error;
+  }
+};
+
+export const getUsersByNameDescripProf = async (profession) => {
+  try {
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      params: {
+        profession,
+      },
+    };
+    console.log(options.params.profession);
+    const response = await axios.get(
+      `${URL_GET_USERS_BY_NAME_DESCRIP_PROF}/${options.params.profession}`
+    );
+
+    return response;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+};
+
+export const putUpdateUser = async (userData) => {
+  try {
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      withCredentials: true,
+    };
+
+    const response = await axios.post(URL_UPDATE_USER, userData, options);
+
+    if (response.status === 200) {
+      console.log("User updated successfully:", response.data);
+      return response;
+    } else {
+      console.error("Error updating user:", response.status, response.data);
+      throw new Error("Failed to update user");
+    }
+  } catch (error) {
+    console.error("Error updating user:", error.message);
     throw error;
   }
 };

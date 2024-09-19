@@ -87,3 +87,18 @@
     bottom: 7px;
   }
   
+  @media (max-width: 768px) {
+    .register form {
+      padding: 1rem;
+      min-width: 350px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgb(49, 37, 37);
+      box-shadow: 0 2px 8px rgba(57, 27, 148, 1);
+      border-radius: 2rem;
+    
+
+    }
+  }
