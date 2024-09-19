@@ -21,7 +21,7 @@ const NavHeader = () => {
   const handleLogout = () => {
     Cookies.remove("token");
     localStorage.removeItem("userLogged");
-    localStorage.removeItem("userData");
+    // localStorage.removeItem("userData");
     setIsLogged(false);
     // navigate("/login");
     setIsLogged(false); // Asegura que el estado global esté actualizado
